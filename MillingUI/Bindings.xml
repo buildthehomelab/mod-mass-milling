@@ -1,0 +1,5 @@
+<Bindings>
+	<Binding name="MILLINGUI_TOGGLE" header="MILLINGUI">
+		MillingUI_Toggle();
+	</Binding>
+</Bindings>

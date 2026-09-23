@@ -1,0 +1,40 @@
+[worldserver]
+
+#
+# Mass Milling
+#
+# Lets a player mill a herb over and over with one command, the way Create All
+# repeats a craft: `.massmill start <herb entry> <count>`. Each mill is a normal
+# Milling cast (cast bar, skill check, interrupted by moving), started by the
+# server as soon as the previous mill's loot has been taken. MillingUI's Create
+# All button drives this; the command is mostly meant for that addon.
+#
+
+#
+#    MassMilling.Enable
+#        Description: Master switch. 0 disables `.massmill start`.
+#        Default:     1
+#
+MassMilling.Enable = 1
+
+#
+#    MassMilling.MaxCount
+#        Description: Most mills a single run may ask for.
+#        Default:     200
+#
+MassMilling.MaxCount = 200
+
+#
+#    MassMilling.DelayMs
+#        Description: Pause between one mill's loot being taken and the next cast.
+#        Default:     250
+#
+MassMilling.DelayMs = 250
+
+#
+#    MassMilling.LootTimeoutSec
+#        Description: How long a run waits for the player to take a mill's loot
+#                     before it stops. Players with auto-loot never hit this.
+#        Default:     30
+#
+MassMilling.LootTimeoutSec = 30
