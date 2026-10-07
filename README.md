@@ -46,6 +46,13 @@ whole amount from one click.
 Replies for the addon are system messages starting with `MASSMILL:`. MillingUI hides them from
 chat.
 
+## Requirements
+
+- AzerothCore wotlk (master). No other module is needed and no SQL is run.
+- WoW 3.3.5a (12340) client. The module works without the addon, but only **MillingUI** gives it a
+  window and a Create All button.
+- Optional: ReagentBankUI, which MillingUI integrates with if it is installed.
+
 ## Install
 
 ```bash
@@ -68,3 +75,22 @@ For the addon, copy the `MillingUI` folder into `World of Warcraft/Interface/Add
 | `MassMilling.MaxCount` | `200` | Most mills one run can ask for. |
 | `MassMilling.DelayMs` | `250` | Pause between taking a mill's loot and the next cast. |
 | `MassMilling.LootTimeoutSec` | `30` | How long a run waits for loot to be taken before it stops. |
+
+## Troubleshooting
+
+- **A run stops after one mill.** Without Auto Loot the server waits for you to take the loot of each
+  mill before the next cast. Turn on Auto Loot, or take the loot before `MassMilling.LootTimeoutSec`
+  runs out.
+- **Create All only does one at a time.** The module is not running. MillingUI looks for it with
+  `.massmill ping`, so check that the worldserver was rebuilt with the module and that
+  `MassMilling.Enable` is `1`.
+- **A run stops early.** Moving, an interrupted cast, having no stack of 5 left, or clicking again
+  (`.massmill stop`) all end a run. A single run is limited by `MassMilling.MaxCount`.
+
+## Credits
+
+Author: [buildthehomelab](https://github.com/buildthehomelab)
+
+## License
+
+GNU AGPL v3. See [LICENSE](LICENSE).
